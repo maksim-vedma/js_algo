@@ -1,37 +1,34 @@
 /**
  * Met un texte en majuscules.
  *
- * @param string {string}
+ * @param {string} string
  * @return {string}
  */
 export function uppercase(string) {
-    return "";
+    return string.toUpperCase();
 }
-
-// console.log(uppercase("Jean michel"));
-
 
 
 /**
  * Retourne la première lettre d'un texte.
  * Exemple: "Chats et chiens" -> "C"
  *
- * @param string {string}
- * @returns string
+ * @param {string} string
+ * @returns {string}
  */
 export function firstLetter(string) {
-    return "";
+    return string[0];
 }
 
 /**
  * Retourne le premier mot d'un texte.
  * Exemple: "Chats et chiens" -> "Chats"
  *
- * @param string {string}
+ * @param {string} string
  * @return {string}
  */
 export function firstWord(string) {
-    return "";
+    return string.split(" ")[0];
 }
 
 /**
@@ -40,9 +37,9 @@ export function firstWord(string) {
  *
  * Exemple: "Ca va !" -> "CXXX vXXX"
  *
- * @param string {string}
+ * @param {string} string
  * @return {string}
  */
 export function pasDeA(string) {
-    return "";
+    return string.replace(/a/gi, "XXX");
 }

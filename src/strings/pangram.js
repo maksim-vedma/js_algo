@@ -3,7 +3,7 @@
  *  la phrase passée en argument contient au moins
  *  une occurence de chaque lettre de l'alphabet
  *
- *  @param sentence {string}
+ *  @param {string} sentence
  *  @return {boolean}
  */
 export function isPangram(sentence) {
