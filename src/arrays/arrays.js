@@ -8,7 +8,11 @@
  * @param {any} nouvelElement
  */
 export function ajout(tablo, nouvelElement) {
-    return [];
+    tablo.push(nouvelElement);
+    return tablo;
+
+    // ou en utilisant la destructuration
+    // return [...tablo, nouvelElement];
 }
 
 /**
@@ -22,7 +26,7 @@ export function ajout(tablo, nouvelElement) {
  * @returns {number[]}
  */
 export function plusOne(numbers) {
-    return [];
+    return numbers.map(n => n + 1);
 }
 
 
@@ -33,7 +37,16 @@ export function plusOne(numbers) {
  * @return {number}
  */
 export function avg(notes) {
-    return 0;
+    let sum = 0;
+
+    notes.forEach(num => {
+        sum += num;
+    });
+
+    return (sum / notes.length);
+
+    // ou bien de façon déclarative
+    // return notes.reduce((sum, n) => sum + n, 0) / notes.length;
 }
 
 /**
@@ -54,7 +67,12 @@ export function avg(notes) {
  * @return {string}
  */
 export function avgGroup(classe) {
-    return "";
+    let details = "";
+    Object.keys(classe).forEach((student) => {
+        details += student + " a eu la moyenne de " + avg(classe[student]) + "\n";
+    });
+
+    return details;
 }
 
 /**
@@ -64,7 +82,17 @@ export function avgGroup(classe) {
  * @returns {array}
  */
 export function deleteDuplicate(arr) {
-    return [];
+    const sansDoublons = [];
+    arr.forEach(el => {
+        if (!sansDoublons.includes(el)) {
+            sansDoublons.push(el);
+        }
+    });
+
+    return sansDoublons;
+
+    // ou avec un Set !
+    // return [...new Set(arr)];
 }
 
 /**
@@ -73,5 +101,14 @@ export function deleteDuplicate(arr) {
  * @return {number | null}
  */
 export function biggest(numbers) {
-    return 0;
+    let bigOne = null;
+    for (let n of numbers) {
+        if (bigOne == null || bigOne < n) {
+            bigOne = n;
+        }
+    }
+    return bigOne;
+
+    // Ou bien...
+    //return Math.max(...numbers);
 }
