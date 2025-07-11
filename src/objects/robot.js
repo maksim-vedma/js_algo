@@ -17,8 +17,43 @@
  */
 export function moveRobot(moves) {
     const pos = {x: 0, y: 0};
-    // ...
+    const DIRECTIONS = ["N", "E", "S", "W"];
+    let directionIndex = 0;
+
+    moves.split('').forEach(command => {
+        switch (command) {
+            case 'D':
+                directionIndex = (directionIndex + 1) % DIRECTIONS.length;
+                break;
+            case 'G':
+                directionIndex = directionIndex === 0 ? DIRECTIONS.length - 1 : directionIndex - 1;
+                break;
+            case 'A':
+                // Seulement dans ce cas nous appliquons un mouvement qui dépend de la direction actuelle
+                switch (DIRECTIONS[directionIndex]) {
+                    case 'N':
+                        pos.y--;
+                        break;
+                    case 'E':
+                        pos.x++;
+                        break;
+                    case 'S':
+                        pos.y++;
+                        break;
+                    case 'W':
+                        pos.x--;
+                        break;
+                }
+                break;
+            default:
+                break;
+        }
+
+    });
+
 
     return pos;
 }
 
+
+console.log(moveRobot('AADDAAGAAA'));
