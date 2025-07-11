@@ -54,6 +54,3 @@ export function moveRobot(moves) {
 
     return pos;
 }
-
-
-console.log(moveRobot('AADDAAGAAA'));
