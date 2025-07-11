@@ -6,7 +6,7 @@
  * @returns {number}
  */
 export function dice6() {
-    return 0;
+    return Math.floor(Math.random() * 6 + 1);
 }
  /** * Simule un lancé de dès. * Doit pouvoir choisir la taille de notre dés. * Par exemple, si on joue à Donjon et Dragon, * nous avons besoin de dés de 20 (donne un résultat
  * compris entre 1 et 20)
@@ -15,7 +15,7 @@ export function dice6() {
  * @returns {number}
  */
 export function diceN(faces) {
-    return 0;
+     return Math.floor(Math.random() * faces + 1);
 }
 
 /**
@@ -31,7 +31,13 @@ export function diceN(faces) {
  * @return {number[]}
  */
 export function dices(nb, faces) {
-    return [];
+    const resultats = [];
+
+    for (let i = 0; i < nb; i++) {
+        resultats.push(diceN(faces));
+    }
+
+    return resultats;
 }
 
 /**
@@ -47,5 +53,5 @@ export function dices(nb, faces) {
  * @return {number[]}
  */
 export function dicesAlt(nb, faces) {
-    return [];
+    return [...Array(nb).keys()].map(() => diceN(faces));
 }
