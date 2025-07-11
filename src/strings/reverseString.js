@@ -5,23 +5,16 @@
  * caractères. Exemple :
  * "Coucou" -> "uocuoC"
  *
- * @param string {string}
+ * @param {string} string
  * @returns {string}
  */
 export function reverseString(string) {
-    return "";
-}
+    let reversed = "";
+    for (let i= string.length - 1; i >= 0; i--) {
+        reversed += string[i];
+    }
+    return reversed;
 
-/**
- * Version alternative sans boucle version with Array
- *
- * Cette fonction doit inverser une chaine de
- * caractères. Exemple :
- * "Coucou" -> "uocuoC"
- *
- * @param string {string}
- * @returns {string}
- */
-export function reverseStringOneLiner(string) {
-    return "";
+    // Ou bien
+    // return string.split('').reverse().join('');
 }
