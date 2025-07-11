@@ -6,7 +6,7 @@
  * @returns {boolean}
  */
 export function pileFace() {
-    return false;
+    return Boolean(Math.floor(Math.random() * 2));
 }
 
 /**
@@ -18,6 +18,19 @@ export function pileFace() {
  * @returns {object}
  */
 export function testPileFace(numberOfTries) {
-    return {};
+    let pile = 0;
+    let face = 0;
+
+    for (let i = 0; i < numberOfTries; i++) {
+        if (pileFace()) {
+            pile++
+        } else {
+            face++
+        }
+        //Bonus, version courte avec une ternaire !
+        // pileFace() ? pile++ : face++;
+    }
+
+    return {pile, face};
 }
 
