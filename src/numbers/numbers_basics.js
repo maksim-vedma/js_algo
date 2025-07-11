@@ -17,7 +17,7 @@ export function addition(a, b) {
  * @return {number}
  */
 export function soustraction(a, b) {
-    return 0;
+    return a - b;
 }
 
 /**
@@ -28,7 +28,7 @@ export function soustraction(a, b) {
  * @return {number}
  */
 export function multiplication(a, b) {
-    return 0;
+    return a * b;
 }
 
 /**
@@ -42,7 +42,10 @@ export function multiplication(a, b) {
  * @return {number | NaN}
  */
 export function division(a, b) {
-    return 0;
+    if (b === 0) {
+        return NaN;
+    }
+    return a / b;
 }
 
 
@@ -54,7 +57,7 @@ export function division(a, b) {
  * @return {number}
  */
 export function auCarre(a) {
-    return 0;
+    return a * a;
 }
 
 /**
@@ -66,7 +69,7 @@ export function auCarre(a) {
  * @return {boolean}
  */
 export function estPair(a) {
-    return true;
+    return a % 2 === 0;
 }
 
 /**
@@ -80,7 +83,7 @@ export function estPair(a) {
  * @return {number}
  */
 export function getPriceTTC(priceHT, quantity) {
-    return 0;
+    return priceHT * 1.2 * quantity;
 }
 
 /**
@@ -98,7 +101,7 @@ export function getPriceTTC(priceHT, quantity) {
  * @return {number}
  */
 export function getNewPrice(price, modif) {
-    return 0;
+    return price * (1 + (modif / 100));
 }
 
 /**
@@ -111,7 +114,13 @@ export function getNewPrice(price, modif) {
  * @return string
  */
 export function getWaterState(temperature) {
-    return "";
+    if (temperature > 70) {
+        return "gazeux";
+    } else if (temperature > 0) {
+        return "liquide";
+    }
+
+    return "solide";
 }
 
 /**
@@ -126,4 +135,7 @@ export function getWaterState(temperature) {
  * @return void
  */
 export function displayMultiplyTable(multiplier, max) {
+    for (let i = 0; i <= max; i++) {
+        console.log(`${i} x ${multiplier} = ${multiplier * i}`);
+    }
 }

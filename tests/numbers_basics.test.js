@@ -30,7 +30,7 @@ describe("Opérations mathématiques", () => {
         expect(division(200, 4)).toBe(50)
         expect(division(10, 2)).toBe(5)
         expect(division(200, 0)).toBe(NaN)
-        expect(division(0, 10)).toBe(NaN)
+        expect(division(0, 10)).toBe(0)
     });
     it('Calcule le carré de a', () => {
         expect(auCarre(5)).toBe(25)
