@@ -9,7 +9,7 @@
  * @returns string
  */
 export function screaming(str) {
-    return "";
+    return str.toUpperCase() + "!!!";
 }
 
 /**
@@ -19,7 +19,10 @@ export function screaming(str) {
  * @returns string
  */
 export function capitalize(string) {
-    return "";
+    return string.replace(
+        string[0],
+        string[0].toUpperCase(),
+    );
 }
 
 /**
@@ -29,7 +32,10 @@ export function capitalize(string) {
  * @returns string
  */
 export function lowerize(string) {
-    return "";
+    return string.replace(
+        string[0],
+        string[0].toLowerCase(),
+    );
 }
 
 /**
@@ -41,7 +47,14 @@ export function lowerize(string) {
  * @returns string
  */
 export function toPascalCase(string) {
-    return "";
+    return string
+        .toLowerCase()
+        .split(' ')
+        .map(word => capitalize(word))
+        .join('');
+
+    // Ou implement
+    // return capitalize(toCamelCase(string));
 }
 
 /**
@@ -52,5 +65,12 @@ export function toPascalCase(string) {
  * @returns string
  */
 export function toCamelCase(string) {
-    return "";
+    return string
+        .toLowerCase()
+        .split(' ')
+        .map((word, i) => i > 0 ? capitalize(word) : word)
+        .join('');
+
+    // Ou simplement
+    // return lowerize(toPascalCase(string));
 }
