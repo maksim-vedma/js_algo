@@ -1,5 +1,5 @@
 import {describe, expect, it} from "vitest";
-import {ajout, plusOne, avg, avgGroup, deleteDuplicate} from '../src/arrays/arrays';
+import {ajout, plusOne, avg, avgGroup, deleteDuplicate, biggest} from '../src/arrays/arrays';
 
 
 describe("Ajout dans un tableau", () => {
