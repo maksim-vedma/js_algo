@@ -17,5 +17,22 @@
  *  @param {number} amount
  */
 export function bankomat(amount) {
-    return;
+    const cash = {
+        500: 0,
+        200: 0,
+        100: 0,
+        50: 0,
+        20: 0,
+        10: 0,
+        5: 0,
+        2: 0,
+        1: 0,
+    }
+
+    Object.keys(cash).reverse().forEach(billet => {
+        cash[billet] = Math.floor(amount / billet);
+        amount -= billet * cash[billet];
+    });
+
+    return cash;
 }
